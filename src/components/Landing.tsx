@@ -6,6 +6,7 @@ const Landing = ({ children }: PropsWithChildren) => {
     <>
       <div className="landing-section" id="landingDiv">
         <div className="landing-container">
+          
           <div className="landing-intro">
             <h2>Hello! I'm</h2>
             <h1>
@@ -23,11 +24,13 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-2">Developer</div>
             </h2>
 
-            <h2>
+            {/* Added class here for spacing */}
+            <h2 className="dsa-section">
               <div className="landing-h2-info">DSA</div>
               <div className="landing-h2-info-1">Enthusiast</div>
             </h2>
           </div>
+
         </div>
 
         {children}
