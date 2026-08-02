@@ -53,44 +53,65 @@ const WhatIDo = () => {
               <h3>FRONTEND DEVELOPMENT</h3>
               <h4>Building Responsive & Interactive UI</h4>
               <p>
-                I build responsive and user-friendly web interfaces using modern
-                technologies with a focus on performance and clean UI/UX design.
+                I build responsive and user-friendly web interfaces using React.js, TypeScript, and standard design principles, focusing on clean UI/UX and seamless responsiveness.
               </p>
 
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">React.js</div>
                 <div className="what-tags">HTML5</div>
                 <div className="what-tags">CSS3</div>
                 <div className="what-tags">JavaScript</div>
+                <div className="what-tags">TypeScript</div>
                 <div className="what-tags">Responsive Design</div>
-                <div className="what-tags">DOM Manipulation</div>
-                <div className="what-tags">UI/UX</div>
               </div>
             </div>
           </div>
 
-          {/* 🟣 PROGRAMMING & DSA */}
+          {/* 🟣 BACKEND & DATABASES */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
           >
             <div className="what-content-in">
-              <h3>PROGRAMMING & DSA</h3>
-              <h4>Problem Solving & Logic Building</h4>
+              <h3>BACKEND & DATABASES</h3>
+              <h4>Designing Scalable APIs & Cloud Architectures</h4>
               <p>
-                I actively practice Data Structures and Algorithms to improve
-                problem-solving skills and build efficient solutions for
-                real-world applications.
+                I develop robust, secure backend services, RESTful APIs, and database models using Node.js, Express, and modern SQL/NoSQL databases.
+              </p>
+
+              <h5>Skillset & tools</h5>
+              <div className="what-content-flex">
+                <div className="what-tags">Node.js</div>
+                <div className="what-tags">Express.js</div>
+                <div className="what-tags">PostgreSQL</div>
+                <div className="what-tags">Supabase</div>
+                <div className="what-tags">Firebase</div>
+                <div className="what-tags">REST APIs</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 🟢 CS FUNDAMENTALS & AI */}
+          <div
+            className="what-content what-noTouch"
+            ref={(el) => setRef(el, 2)}
+          >
+            <div className="what-content-in">
+              <h3>CS FUNDAMENTALS & AI</h3>
+              <h4>Algorithmic Optimization & AI Integrations</h4>
+              <p>
+                I apply strong Data Structures and Algorithms in C++ and Python, and integrate AI APIs (such as Gemini and Dialogflow) to create smart tools.
               </p>
 
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">C++</div>
                 <div className="what-tags">Python</div>
+                <div className="what-tags">DSA</div>
                 <div className="what-tags">OOP</div>
-                <div className="what-tags">DBMS</div>
-                <div className="what-tags">SQL</div>
-                <div className="what-tags">Problem Solving</div>
+                <div className="what-tags">Gemini API</div>
+                <div className="what-tags">Dialogflow</div>
               </div>
             </div>
           </div>

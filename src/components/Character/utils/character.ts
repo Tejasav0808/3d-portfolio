@@ -47,7 +47,7 @@ const setCharacter = (
 
                 child.castShadow = true;
                 child.receiveShadow = true;
-                mesh.frustumCulled = true;
+                mesh.frustumCulled = false;
               }
             });
             resolve(gltf);

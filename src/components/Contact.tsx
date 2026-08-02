@@ -36,7 +36,7 @@ const Contact = () => {
             <h4>Education</h4>
             <p>
               B.Tech Computer Science & Engineering <br />
-              Manav Rachna University (2023 – Present)
+              Manav Rachna University (2023 – 2027)
             </p>
           </div>
 

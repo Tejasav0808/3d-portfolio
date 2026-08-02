@@ -1,39 +1,29 @@
-import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
 
-const Landing = ({ children }: PropsWithChildren) => {
+const Landing = () => {
   return (
     <>
       <div className="landing-section" id="landingDiv">
-        <div className="landing-container">
-          
-          <div className="landing-intro">
-            <h2>Hello! I'm</h2>
-            <h1>
-              TEJASAV
-              <br />
-              <span>BHATIA</span>
+        <div className="landing-container hero-center">
+          <div className="hero-content">
+            <h3 className="hero-greeting">Hello, I'm</h3>
+            <h1 className="hero-name">
+              TEJASAV <span>BHATIA</span>
             </h1>
-          </div>
-
-          <div className="landing-info">
-            <h3>B.Tech CSE Student &</h3>
-
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Frontend</div>
-              <div className="landing-h2-2">Developer</div>
+            <h2 className="hero-role">
+              Aspiring Software Developer
             </h2>
-
-            {/* Added class here for spacing */}
-            <h2 className="dsa-section">
-              <div className="landing-h2-info">DSA</div>
-              <div className="landing-h2-info-1">Enthusiast</div>
-            </h2>
+            <p className="hero-subtext">
+              Third-year Computer Science student at Manav Rachna University.
+              Skilled in full-stack web development, software engineering, and algorithmic problem-solving.
+            </p>
+            <div className="hero-badges">
+              <span className="hero-badge">C++ & Python</span>
+              <span className="hero-badge">React & Node.js</span>
+              <span className="hero-badge">DSA & Databases</span>
+            </div>
           </div>
-
         </div>
-
-        {children}
       </div>
     </>
   );

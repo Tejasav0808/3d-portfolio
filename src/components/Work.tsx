@@ -1,19 +1,29 @@
 import { useState, useCallback } from "react";
 import "./styles/Work.css";
-import WorkImage from "./WorkImage";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
-    title: "AI University Chatbot",
+    title: "StudyLens – AI Study Companion",
+    category: "AI-Powered Mobile Application",
+    tools:
+      "React Native, Node.js, Express, MongoDB, Gemini AI, Tesseract.js OCR, ImageKit",
+    link: "https://github.com/Tejasav0808",
+  },
+  {
+    title: "CampusPass – Event Management System",
+    category: "Full Stack Web Application",
+    tools:
+      "React, TypeScript, Node.js, Express, MySQL, Supabase, Tailwind CSS",
+    link: "https://github.com/Tejasav0808",
+  },
+  {
+    title: "AI-Powered University Chatbot",
     category: "AI + Web Application",
     tools:
-      "HTML, CSS, JavaScript, Node.js, Firebase, Dialogflow, OpenRouter API",
-    image: "/images/chatbot.png",
+      "HTML, CSS, JavaScript, Node.js, Firebase, Dialogflow, Gemini API",
     link: "https://github.com/Tejasav0808/chatbot-project.git",
   },
- 
-
 ];
 
 const Work = () => {
@@ -86,7 +96,17 @@ const Work = () => {
                       </div>
 
                       <div className="carousel-details">
-                        <h4>{project.title}</h4>
+                        <h4>
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="project-link-title"
+                            data-cursor="disable"
+                          >
+                            {project.title} <MdArrowOutward className="project-link-icon" />
+                          </a>
+                        </h4>
                         <p className="carousel-category">
                           {project.category}
                         </p>
@@ -98,14 +118,6 @@ const Work = () => {
                           <p>{project.tools}</p>
                         </div>
                       </div>
-                    </div>
-
-                    <div className="carousel-image-wrapper">
-                      <WorkImage
-                        image={project.image}
-                        alt={project.title}
-                        link={project.link}
-                      />
                     </div>
                   </div>
                 </div>

@@ -115,8 +115,25 @@ function Pointer({ isActive }: { isActive: boolean }) {
   );
 }
 
+function isWebGLAvailable() {
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch (e) {
+    return false;
+  }
+}
+
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
+  const [webglAvailable, setWebglAvailable] = useState(true);
+
+  useEffect(() => {
+    setWebglAvailable(isWebGLAvailable());
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -147,31 +164,45 @@ const TechStack = () => {
     <div className="techstack">
       <h2>My Tech Stack</h2>
 
-      <Canvas camera={{ position: [0, 0, 20], fov: 35 }}>
-        <ambientLight intensity={1} />
-        <directionalLight position={[0, 5, -4]} intensity={2} />
+      {!webglAvailable ? (
+        <div className="tech-fallback-grid">
+          {imageUrls.map((url, i) => {
+            const name = url.split("/").pop()?.split(".")[0] || "tech";
+            return (
+              <div key={i} className="tech-fallback-card">
+                <img src={url} alt={name} />
+                <span>{name}</span>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <Canvas camera={{ position: [0, 0, 20], fov: 35 }}>
+          <ambientLight intensity={1} />
+          <directionalLight position={[0, 5, -4]} intensity={2} />
 
-        <Physics gravity={[0, 0, 0]}>
-          <Pointer isActive={isActive} />
-          {spheres.map((props, i) => (
-            <SphereGeo
-              key={i}
-              {...props}
-              material={
-                materials[Math.floor(Math.random() * materials.length)]
-              }
-              isActive={isActive}
-            />
-          ))}
-        </Physics>
+          <Physics gravity={[0, 0, 0]}>
+            <Pointer isActive={isActive} />
+            {spheres.map((props, i) => (
+              <SphereGeo
+                key={i}
+                {...props}
+                material={
+                  materials[Math.floor(Math.random() * materials.length)]
+                }
+                isActive={isActive}
+              />
+            ))}
+          </Physics>
 
-        {/* ✅ safer environment */}
-        <Environment preset="city" />
+          {/* ✅ safer environment */}
+          <Environment preset="city" />
 
-        <EffectComposer>
-          <N8AO />
-        </EffectComposer>
-      </Canvas>
+          <EffectComposer>
+            <N8AO />
+          </EffectComposer>
+        </Canvas>
+      )}
     </div>
   );
 };
